@@ -6,7 +6,8 @@ const cors = require('cors');
 const app = express();
 const server = http.createServer(app);
 
-const CORS_ORIGIN = "http://127.0.0.1:5500"
+//const CORS_ORIGIN = "http://127.0.0.1:5500"
+const CORS_ORIGIN = process.env.CORS_ORIGIN;
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || origin === CORS_ORIGIN || origin.startsWith(CORS_ORIGIN)) {
